@@ -1,0 +1,30 @@
+|test
+clk => clk.IN1
+n[0] => n[0].IN1
+n[1] => n[1].IN1
+n[2] => n[2].IN1
+n[3] => n[3].IN1
+opt <= n_divider:b2v_inst.opt
+
+
+|test|n_divider:b2v_inst
+n[0] => Decoder0.IN3
+n[1] => Decoder0.IN2
+n[1] => Decoder1.IN2
+n[2] => Decoder0.IN1
+n[2] => Decoder1.IN1
+n[3] => Decoder0.IN0
+n[3] => Decoder1.IN0
+clk => opt~reg0.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => count[8].CLK
+opt <= opt~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

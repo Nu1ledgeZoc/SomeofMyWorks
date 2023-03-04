@@ -1,0 +1,198 @@
+C51 COMPILER V9.59.0.0   MAIN                                                              06/08/2021 12:03:47 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main
+                    -.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include "smg.h"
+   2          #include "temp.h"
+   3          #include "ESP8266.h"
+   4          //仿真要记得改smg显示的延迟时间以及reg52
+   5          //P20拿来给esp8266的PD口供电，除此外还有P30 RXD ，P31 TXD和esp8266相连
+   6          u8 mode=1;
+   7          u8 s2flag=0;
+   8          sbit s1=P1^3;
+   9          sbit s2=P1^2;
+  10          sbit s3=P1^1;
+  11          sbit s4=P1^0;
+  12          sbit led1=P2^6;
+  13          sbit beep=P1^5;
+  14          void testmode();
+  15          //6.5todo:设计控制模式：
+  16          //////////
+  17          //模式1：按下按钮程序开始，默认进入到温度显示功能，再按一下按钮，程序退出
+  18          //模式2：检测到按钮二按下，进入报警温度设置，按键加减 超过温度时，蜂鸣器报警，再按下，确认温度回退到模式一
+  19          //模式3：静默模式下，只收发信息，显示点表示在运行，不报警
+  20          void main()
+  21          {
+  22   1        u8 RECalarm=0;
+  23   1        char s[30]="\0";
+  24   1        u8 len=0;
+  25   1        P1=0x7f;
+  26   1      //    initUart();
+  27   1          initESP();
+  28   1        
+  29   1        ES=1;
+  30   1        
+  31   1        while(1)
+  32   1        { 
+  33   2          
+  34   2          
+  35   2          //每次程序周期初始化几个变量：
+  36   2          //1.温度的采样码
+  37   2          //2.温度的显示码
+  38   2          //sendstr("hello");
+  39   2          Ds18b20ReadTemp();
+  40   2      
+  41   2          GETtempDISP();
+  42   2          smgdisp(mode);
+  43   2          testmode();
+  44   2          if(flag)
+  45   2          {
+  46   3            flag=0;
+  47   3            if(receive[0]=='+'&&receive[1]=='I'&&receive[2]=='P'&&receive[3]=='D')
+  48   3            {
+  49   4              switch(receive[9])
+  50   4              {
+  51   5              
+  52   5                case 'T': //获取温度 T
+  53   5                {
+  54   6      ////            clrStr(psend);//弃用，改在函数开头写指针
+C51 COMPILER V9.59.0.0   MAIN                                                              06/08/2021 12:03:47 PAGE 2   
+
+  55   6      //            sprintf(psend,"Current Temper: %.3lf\r\n\r\n\0",tempS);
+  56   6      //            ESP8266_SendData(psend);
+  57   6                    // *s='\0';
+  58   6                    EA=1;
+  59   6                    ES=0;
+  60   6                    TI=1;
+  61   6                    sprintf(s,"temperature is :%.3f\r\n",tempS);
+  62   6                    printf("AT+CIPSEND=0,%d\r\n",strlen(s)+2);
+  63   6                    delay_10ms();
+  64   6                    printf("%s\r\n",s);
+  65   6                    delay_10ms();
+  66   6                    TI=0;
+  67   6                    ES=1;
+  68   6      
+  69   6                  break;//点亮led1
+  70   6                }
+  71   5                case '2': //设置alarm 2=XX
+  72   5                {           
+  73   6                  if(receive[10]=='=')
+  74   6                  {
+  75   7                    RECalarm=10*(receive[11]-'0')+receive[12]-'0';
+  76   7                    alarm=RECalarm;
+  77   7                  }
+  78   6                  break;//关闭led1
+  79   6                }
+  80   5                case '3': //3
+  81   5                { 
+  82   6                  mode=3;
+  83   6                  s2flag=0;
+  84   6                  break;//
+  85   6                }
+  86   5                
+  87   5                case '1': 
+  88   5                {
+  89   6                  mode=1;
+  90   6                s2flag=0;
+  91   6                break;//
+  92   6                }
+  93   5               }
+  94   4                
+  95   4            }
+  96   3          }
+  97   2        }
+  98   1      }
+  99          void Usart() interrupt 4
+ 100          {
+ 101   1        static u16 i=0;
+ 102   1        if(RI)
+ 103   1        { 
+ 104   2          RI=0;
+ 105   2          
+ 106   2          receive[i]=SBUF;    
+ 107   2          i++;
+ 108   2          if(receive[i-1]=='\n')
+ 109   2          {
+ 110   3            flag=1;
+ 111   3            receive[i]='\0';
+ 112   3            //ES=0;
+ 113   3            i=0;
+ 114   3          }  
+ 115   2        }
+ 116   1        //else TI=0;
+C51 COMPILER V9.59.0.0   MAIN                                                              06/08/2021 12:03:47 PAGE 3   
+
+ 117   1      }
+ 118          void testmode() 
+ 119          {
+ 120   1          if(mode==1) //只有在1模式下会报警
+ 121   1          if ((unsigned int)(tempS*1)> alarm) 
+ 122   1          {
+ 123   2            baojing=0;
+ 124   2            //baojing=1;
+ 125   2          }
+ 126   1          else
+ 127   1          {baojing=1;}
+ 128   1      
+ 129   1        if(P1==0x77 && s2flag==0) mode=1;//只有1按下，2未有按下，模式一
+ 130   1        
+ 131   1        if(P1==0x7B) 
+ 132   1        {
+ 133   2            while(P1==0x7B)
+ 134   2            {P1=0x7F;}
+ 135   2      
+ 136   2          s2flag++;
+ 137   2          if(s2flag == 2)
+ 138   2          {
+ 139   3            mode=1;
+ 140   3            s2flag=0;
+ 141   3          }
+ 142   2          else
+ 143   2          {mode=2;}
+ 144   2        } 
+ 145   1        if(mode==2)
+ 146   1        {
+ 147   2          switch(P1)
+ 148   2          {
+ 149   3            case 0x7D: 
+ 150   3              alarm++;
+ 151   3            while(P1==0x7D)
+ 152   3            {P1=0x7F;}
+ 153   3            break;
+ 154   3            case 0x7E: 
+ 155   3              if(alarm > 0) alarm--;
+ 156   3            while(P1==0x7E)
+ 157   3            {P1=0x7F;}
+ 158   3            break;
+ 159   3          }
+ 160   2          
+ 161   2        }
+ 162   1        
+ 163   1        if(P1==0x7D && s2flag==0)
+ 164   1        {
+ 165   2          mode=3;
+ 166   2        }
+ 167   1        P1=0x7f;
+ 168   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    466    ----
+   CONSTANT SIZE    =     76    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      4      32
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+C51 COMPILER V9.59.0.0   MAIN                                                              06/08/2021 12:03:47 PAGE 4   
+
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,92 @@
+m255
+K4
+z2
+!s11f vlog 2020.4 2020.10, Oct 13 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/ProjectCode/FPGA/SHUDIAN_PLUS/component/counter_10/simulation/modelsim
+T_opt
+!s110 1625672921
+VLCQ;gBmBWeN2cH6GBhO]_2
+04 7 4 work test_tb fast 0
+=1-e4b97afadadd-60e5ccd9-45-2f9c
+o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2020.4;71
+vcounter_10
+Z2 !s110 1625672920
+!i10b 1
+!s100 nmHLz[9Qz:F6olAJDFaN<1
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IBVU85IBGEg48XG72:GCF@3
+R0
+w1625672785
+8D:/ProjectCode/FPGA/SHUDIAN_PLUS/component/counter_10/counter_10.v
+FD:/ProjectCode/FPGA/SHUDIAN_PLUS/component/counter_10/counter_10.v
+!i122 1
+L0 3 19
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2020.4;71
+r1
+!s85 0
+31
+Z6 !s108 1625672920.000000
+!s107 D:/ProjectCode/FPGA/SHUDIAN_PLUS/component/counter_10/counter_10.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/ProjectCode/FPGA/SHUDIAN_PLUS/component/counter_10|D:/ProjectCode/FPGA/SHUDIAN_PLUS/component/counter_10/counter_10.v|
+!i113 0
+Z7 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z8 !s92 -vlog01compat -work work +incdir+D:/ProjectCode/FPGA/SHUDIAN_PLUS/component/counter_10 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vtest
+R2
+!i10b 1
+!s100 ]n5OI?4e7LTSoeUSQM3B:2
+R3
+I@^IUIz<a>:7jD177z[9?W3
+R0
+w1625672788
+8D:/ProjectCode/FPGA/SHUDIAN_PLUS/component/counter_10/test.v
+FD:/ProjectCode/FPGA/SHUDIAN_PLUS/component/counter_10/test.v
+!i122 0
+L0 1 8
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 D:/ProjectCode/FPGA/SHUDIAN_PLUS/component/counter_10/test.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/ProjectCode/FPGA/SHUDIAN_PLUS/component/counter_10|D:/ProjectCode/FPGA/SHUDIAN_PLUS/component/counter_10/test.v|
+!i113 0
+R7
+R8
+R1
+vtest_tb
+R2
+!i10b 1
+!s100 O4:U_Gk=Nd[Y`7YM3j4F=1
+R3
+I2oZ<B_6<H2??jSzBA^;G<3
+R0
+w1625672806
+8D:/ProjectCode/FPGA/SHUDIAN_PLUS/component/counter_10/test_tb.v
+FD:/ProjectCode/FPGA/SHUDIAN_PLUS/component/counter_10/test_tb.v
+!i122 2
+L0 2 15
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 D:/ProjectCode/FPGA/SHUDIAN_PLUS/component/counter_10/test_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/ProjectCode/FPGA/SHUDIAN_PLUS/component/counter_10|D:/ProjectCode/FPGA/SHUDIAN_PLUS/component/counter_10/test_tb.v|
+!i113 0
+R7
+R8
+R1

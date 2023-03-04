@@ -1,0 +1,175 @@
+|SHUDIAN_PLUS
+data[0] <= romtatal:inst8.otp[0]
+data[1] <= romtatal:inst8.otp[1]
+data[2] <= romtatal:inst8.otp[2]
+data[3] <= romtatal:inst8.otp[3]
+data[4] <= romtatal:inst8.otp[4]
+data[5] <= romtatal:inst8.otp[5]
+data[6] <= romtatal:inst8.otp[6]
+data[7] <= romtatal:inst8.otp[7]
+SYS_CLK => n_divider:inst7.clk
+sel_f[0] <= counter_10:inst6.q[0]
+sel_f[1] <= counter_10:inst6.q[1]
+sel_f[2] <= counter_10:inst6.q[2]
+sel_f[3] <= counter_10:inst6.q[3]
+btn_f => counter_10:inst6.btn1
+sel_mode[0] <= counter_4:inst3.otp[0]
+sel_mode[1] <= counter_4:inst3.otp[1]
+btn_mode => counter_4:inst3.btn
+sel_led[0] <= Distinguish_counter:inst.sel_sig[0]
+sel_led[1] <= Distinguish_counter:inst.sel_sig[1]
+sel_led[2] <= Distinguish_counter:inst.sel_sig[2]
+sel_led[3] <= Distinguish_counter:inst.sel_sig[3]
+V_cmp_sig => Distinguish_counter:inst.cmp1_sig
+
+
+|SHUDIAN_PLUS|romtatal:inst8
+clk => cout~reg0.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => count[8].CLK
+clk => count[9].CLK
+clk => otp[0]~reg0.CLK
+clk => otp[1]~reg0.CLK
+clk => otp[2]~reg0.CLK
+clk => otp[3]~reg0.CLK
+clk => otp[4]~reg0.CLK
+clk => otp[5]~reg0.CLK
+clk => otp[6]~reg0.CLK
+clk => otp[7]~reg0.CLK
+choose[0] => data.RADDR10
+choose[1] => data.RADDR11
+cout <= cout~reg0.DB_MAX_OUTPUT_PORT_TYPE
+otp[0] <= otp[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+otp[1] <= otp[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+otp[2] <= otp[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+otp[3] <= otp[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+otp[4] <= otp[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+otp[5] <= otp[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+otp[6] <= otp[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+otp[7] <= otp[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SHUDIAN_PLUS|n_divider:inst7
+n[0] => Decoder0.IN3
+n[0] => Decoder1.IN2
+n[0] => Decoder2.IN2
+n[1] => Decoder0.IN2
+n[1] => Decoder1.IN1
+n[2] => Decoder0.IN1
+n[2] => Decoder2.IN1
+n[3] => Decoder0.IN0
+n[3] => Decoder1.IN0
+n[3] => Decoder2.IN0
+clk => opt~reg0.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => count[8].CLK
+opt <= opt~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SHUDIAN_PLUS|counter_10:inst6
+btn1 => q[0]~reg0.CLK
+btn1 => q[1]~reg0.CLK
+btn1 => q[2]~reg0.CLK
+btn1 => q[3]~reg0.CLK
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SHUDIAN_PLUS|counter_4:inst3
+btn => otp[0]~reg0.CLK
+btn => otp[1]~reg0.CLK
+otp[0] <= otp[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+otp[1] <= otp[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SHUDIAN_PLUS|Distinguish_counter:inst
+cmp1_sig => sel_sig[0]~reg0.CLK
+cmp1_sig => sel_sig[1]~reg0.CLK
+cmp1_sig => sel_sig[2]~reg0.CLK
+cmp1_sig => sel_sig[3]~reg0.CLK
+clk => i[0].CLK
+clk => i[1].CLK
+clk => i[2].CLK
+clk => i[3].CLK
+clk => i[4].CLK
+clk => i[5].CLK
+clk => i[6].CLK
+clk => i[7].CLK
+clk => i[8].CLK
+clk => i[9].CLK
+clk => i[10].CLK
+clk => i[11].CLK
+clk => i[12].CLK
+clk => i[13].CLK
+clk => i[14].CLK
+clk => i[15].CLK
+clk => i[16].CLK
+clk => i[17].CLK
+clk => i[18].CLK
+clk => i[19].CLK
+clk => i[20].CLK
+clk => i[21].CLK
+clk => i[22].CLK
+clk => i[23].CLK
+clk => i[24].CLK
+clk => i[25].CLK
+clk => i[26].CLK
+clk => i[27].CLK
+clk => i[28].CLK
+clk => i[29].CLK
+clk => i[30].CLK
+clk => i[31].CLK
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+set => i.OUTPUTSELECT
+sel_sig[0] <= sel_sig[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sel_sig[1] <= sel_sig[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sel_sig[2] <= sel_sig[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sel_sig[3] <= sel_sig[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,24 @@
+|test
+btn1 => btn1.IN1
+btn2 => btn2.IN1
+q[0] << counter_10:t.port2
+q[1] << counter_10:t.port2
+q[2] << counter_10:t.port2
+q[3] << counter_10:t.port2
+
+
+|test|counter_10:t
+btn1 => q[0]~reg0.ALOAD
+btn1 => q[1]~reg0.ALOAD
+btn1 => q[2]~reg0.ALOAD
+btn1 => q[3]~reg0.ALOAD
+btn2 => q[0]~reg0.CLK
+btn2 => q[1]~reg0.CLK
+btn2 => q[2]~reg0.CLK
+btn2 => q[3]~reg0.CLK
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

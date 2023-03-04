@@ -1,0 +1,122 @@
+C51 COMPILER V9.59.0.0   ESP8266                                                           06/08/2021 12:03:47 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE ESP8266
+OBJECT MODULE PLACED IN .\Objects\ESP8266.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ESP8266.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\E
+                    -SP8266.lst) TABS(2) OBJECT(.\Objects\ESP8266.obj)
+
+line level    source
+
+   1          #include "ESP8266.h"
+   2          #include "temp.h"
+   3          //unsigned char Send[20]="\0";
+   4          unsigned char receive[20]="\0";
+   5          unsigned char flag=0;
+   6          //void clrStr(unsigned char p[])//清空字符串数组
+   7          //{
+   8          //  u8 j=0;
+   9          //  while(p[j] != '\0')
+  10          //  {
+  11          //    p[j]='\0';
+  12          //    j++;
+  13          //  }
+  14          //}
+  15          void sendstr(char *p)
+  16          {
+  17   1        u8 i=0,a;
+  18   1      
+  19   1        while(p[i]!='\0')
+  20   1        {   
+  21   2            UART_SendByte(p[i]);
+  22   2           for(a=3;a>0;a--);
+  23   2          i++;
+  24   2        }
+  25   1       // ES=1;
+  26   1        delay_10ms();
+  27   1      }
+  28          void UART_SendByte(u8 dat)
+  29          {
+  30   1        ES=0; //关闭串口中断
+  31   1        TI=0; //清发送完毕中断请求标志位
+  32   1        SBUF=dat; //发送
+  33   1        while(TI==0); //等待发送完毕
+  34   1        TI=0; //清发送完毕中断请求标志位
+  35   1        ES=1; //允许串口中断
+  36   1      }
+  37          //主机地址192.168.4.1
+  38          void initESP()
+  39          {
+  40   1        TMOD = 0x20;
+  41   1        SCON = 0x50;
+  42   1        TH1 = 0xFD;//9600bit/s
+  43   1        TL1 = TH1;
+  44   1        PCON = 0x00;
+  45   1        EA = 0;
+  46   1        ES = 0;
+  47   1        TR1 = 1;
+  48   1      //  ES=0;
+  49   1        sendstr("AT+CWMODE_DEF=2\r\n");
+  50   1        delay_ms(100);
+  51   1        baojing=~baojing;
+  52   1        sendstr("AT+CWSAP_DEF=\"Z_ESP8266\",\"zwczwczwc\",11,3\r\n");
+  53   1        delay_ms(100);
+  54   1        baojing=~baojing;
+C51 COMPILER V9.59.0.0   ESP8266                                                           06/08/2021 12:03:47 PAGE 2   
+
+  55   1        sendstr("AT+CIPAP=\"192.168.4.1\"\r\n");
+  56   1        delay_ms(100);
+  57   1        baojing=~baojing;
+  58   1        
+  59   1        sendstr("AT+CIPMUX=1\r\n");
+  60   1        delay_ms(100);
+  61   1        baojing=~baojing;
+  62   1        
+  63   1        sendstr("AT+CIPSERVER=1,8080\r\n");
+  64   1        delay_ms(100);
+  65   1        baojing=~baojing;
+  66   1        baojing=1;
+  67   1        EA=1;
+  68   1        ES=1;
+  69   1      }
+  70          //void ESP8266_SendData(char *pbuf)//默认字符串加标志
+  71          //{
+  72          ////  
+  73          ////  u8 len=0;
+  74          ////  u8 s[19]="\0";
+  75          ////  ES=0;
+  76          ////  len=strlen(pbuf);
+  77          ////  sprintf(s,"AT+CIPSEND=0,%d\r\n",len);
+  78          ////  sendstr(s);
+  79          ////  delay_ms(200);
+  80          ////  sendstr(pbuf);
+  81          ////  delay_10ms();
+  82          ////  ES=1;
+  83          //  u8 len=0;
+  84          //  char s[30]="\0";
+  85          //  // *s='\0';
+  86          //  EA=1;
+  87          //  ES=0;
+  88          //  TI=1;
+  89          //  sprintf(s,"temperature is :%.3f\r\n",tempS);
+  90          //  printf("AT+CIPSEND=0,%d\r\n",strlen(s)+2);
+  91          //  delay_10ms();
+  92          //  printf("%s\r\n",s);
+  93          //  delay_10ms();
+  94          //  TI=0;
+  95          //  ES=1;
+  96          //}
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    184    ----
+   CONSTANT SIZE    =    123    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     21       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

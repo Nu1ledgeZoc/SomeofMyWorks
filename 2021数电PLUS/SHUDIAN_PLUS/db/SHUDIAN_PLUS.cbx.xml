@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="SHUDIAN_PLUS">
+		<CBX_INST_ENTRY INSTANCE_NAME="|SHUDIAN_PLUS|romtatal:inst8|altsyncram:data_rtl_0" CBX_FILE_NAME="altsyncram_qj71.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|SHUDIAN_PLUS|romtatal:inst8|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_ccm.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

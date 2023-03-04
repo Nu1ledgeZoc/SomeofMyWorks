@@ -1,0 +1,8 @@
+".\Objects\STARTUP.obj",
+".\Objects\ESP8266.obj",
+".\Objects\main.obj",
+".\Objects\public.obj",
+".\Objects\smg.obj",
+".\Objects\temp.obj" 
+TO ".\Objects\new" 
+PRINT(".\Listings\new.m51") RAMSIZE(256) 

@@ -1,0 +1,185 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'SYS_CLK'
+Slack : -6.084
+TNS   : -58.816
+
+Type  : Slow 1200mV 85C Model Setup 'V_cmp_sig'
+Slack : -5.842
+TNS   : -23.368
+
+Type  : Slow 1200mV 85C Model Setup 'n_divider:inst7|opt'
+Slack : -3.909
+TNS   : -117.254
+
+Type  : Slow 1200mV 85C Model Setup 'btn_f'
+Slack : -0.337
+TNS   : -0.986
+
+Type  : Slow 1200mV 85C Model Setup 'btn_mode'
+Slack : 0.018
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'n_divider:inst7|opt'
+Slack : 0.450
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'btn_f'
+Slack : 0.485
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'btn_mode'
+Slack : 0.485
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'SYS_CLK'
+Slack : 0.711
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'V_cmp_sig'
+Slack : 2.252
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'n_divider:inst7|opt'
+Slack : -3.201
+TNS   : -76.745
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SYS_CLK'
+Slack : -3.000
+TNS   : -17.870
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'V_cmp_sig'
+Slack : -3.000
+TNS   : -8.948
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'btn_f'
+Slack : -3.000
+TNS   : -8.948
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'btn_mode'
+Slack : -3.000
+TNS   : -5.974
+
+Type  : Slow 1200mV 0C Model Setup 'SYS_CLK'
+Slack : -5.693
+TNS   : -54.963
+
+Type  : Slow 1200mV 0C Model Setup 'V_cmp_sig'
+Slack : -5.256
+TNS   : -21.024
+
+Type  : Slow 1200mV 0C Model Setup 'n_divider:inst7|opt'
+Slack : -3.463
+TNS   : -104.317
+
+Type  : Slow 1200mV 0C Model Setup 'btn_f'
+Slack : -0.206
+TNS   : -0.588
+
+Type  : Slow 1200mV 0C Model Setup 'btn_mode'
+Slack : 0.112
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'n_divider:inst7|opt'
+Slack : 0.417
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'btn_f'
+Slack : 0.430
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'btn_mode'
+Slack : 0.430
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'SYS_CLK'
+Slack : 0.641
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'V_cmp_sig'
+Slack : 1.949
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'n_divider:inst7|opt'
+Slack : -3.201
+TNS   : -76.745
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SYS_CLK'
+Slack : -3.000
+TNS   : -17.870
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'V_cmp_sig'
+Slack : -3.000
+TNS   : -8.948
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'btn_f'
+Slack : -3.000
+TNS   : -8.948
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'btn_mode'
+Slack : -3.000
+TNS   : -5.974
+
+Type  : Fast 1200mV 0C Model Setup 'V_cmp_sig'
+Slack : -1.919
+TNS   : -7.676
+
+Type  : Fast 1200mV 0C Model Setup 'SYS_CLK'
+Slack : -1.900
+TNS   : -18.218
+
+Type  : Fast 1200mV 0C Model Setup 'n_divider:inst7|opt'
+Slack : -1.098
+TNS   : -27.432
+
+Type  : Fast 1200mV 0C Model Setup 'btn_f'
+Slack : 0.420
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'btn_mode'
+Slack : 0.587
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'n_divider:inst7|opt'
+Slack : 0.139
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'btn_f'
+Slack : 0.201
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'btn_mode'
+Slack : 0.201
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'SYS_CLK'
+Slack : 0.275
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'V_cmp_sig'
+Slack : 0.953
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SYS_CLK'
+Slack : -3.000
+TNS   : -13.639
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'btn_f'
+Slack : -3.000
+TNS   : -7.784
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'V_cmp_sig'
+Slack : -3.000
+TNS   : -7.452
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'btn_mode'
+Slack : -3.000
+TNS   : -5.330
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'n_divider:inst7|opt'
+Slack : -1.000
+TNS   : -47.000
+
+------------------------------------------------------------

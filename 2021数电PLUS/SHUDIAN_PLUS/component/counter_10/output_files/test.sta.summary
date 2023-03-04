@@ -1,0 +1,101 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'btn1'
+Slack : -9.020
+TNS   : -35.370
+
+Type  : Slow 1200mV 85C Model Setup 'btn2'
+Slack : -7.959
+TNS   : -31.820
+
+Type  : Slow 1200mV 85C Model Hold 'btn2'
+Slack : -0.445
+TNS   : -1.624
+
+Type  : Slow 1200mV 85C Model Hold 'btn1'
+Slack : -0.240
+TNS   : -0.502
+
+Type  : Slow 1200mV 85C Model Recovery 'btn2'
+Slack : 0.252
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'btn2'
+Slack : -0.145
+TNS   : -0.580
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'btn2'
+Slack : -3.000
+TNS   : -8.948
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'btn1'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Setup 'btn1'
+Slack : -8.481
+TNS   : -33.081
+
+Type  : Slow 1200mV 0C Model Setup 'btn2'
+Slack : -7.526
+TNS   : -30.050
+
+Type  : Slow 1200mV 0C Model Hold 'btn2'
+Slack : -0.348
+TNS   : -1.285
+
+Type  : Slow 1200mV 0C Model Hold 'btn1'
+Slack : -0.169
+TNS   : -0.331
+
+Type  : Slow 1200mV 0C Model Recovery 'btn2'
+Slack : 0.266
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'btn2'
+Slack : -0.134
+TNS   : -0.536
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'btn2'
+Slack : -3.000
+TNS   : -8.948
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'btn1'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV 0C Model Setup 'btn1'
+Slack : -3.300
+TNS   : -12.881
+
+Type  : Fast 1200mV 0C Model Setup 'btn2'
+Slack : -2.829
+TNS   : -11.288
+
+Type  : Fast 1200mV 0C Model Hold 'btn2'
+Slack : -0.351
+TNS   : -1.346
+
+Type  : Fast 1200mV 0C Model Hold 'btn1'
+Slack : -0.244
+TNS   : -0.705
+
+Type  : Fast 1200mV 0C Model Recovery 'btn2'
+Slack : 0.728
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'btn2'
+Slack : -0.092
+TNS   : -0.368
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'btn2'
+Slack : -3.000
+TNS   : -7.420
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'btn1'
+Slack : -3.000
+TNS   : -3.000
+
+------------------------------------------------------------
